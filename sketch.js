@@ -1,6 +1,6 @@
-const grid = document.querySelector('#grid')
+const cdiv = document.querySelector(".container");
 
-
-for (let i=1; i<=16; i++) {
-    grid.innerHTML += `<div class=box> ${i} <div>`
+for (let i = 1; i < 257; i++) {
+  const div = document.createElement('div');
+  cdiv.appendChild(div)
 }
