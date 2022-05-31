@@ -3,7 +3,9 @@ let currentSize = DEFAULT_SIZE;
 
 const grid = document.getElementById("grid");
 const sizeSlider = document.getElementById("sizeSlider");
-const sizeValue = document.getElementById("sizeValue")
+const sizeValue = document.getElementById("sizeValue");
+const randomBtn = document.getElementById("randomColor");
+const blackBtn = document.getElementById("blackColor");
 
 sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value);
 sizeSlider.onchange = (e) => changeSize(e.target.value);
@@ -15,7 +17,7 @@ function changeSize(value) {
 }
 
 function updateSizeValue(value) {
-  sizeValue.innerHTML = `${value} * ${value}`;
+  sizeValue.textContent = `${value} * ${value}`;
 }
 
 function setCurrentSize(newValue) {
@@ -28,7 +30,7 @@ function reloadGrid() {
 }
 
 function clearGrid() {
-  grid.innerHTML = "";
+  grid.textContent = "";
 }
 
 function setupGrid(size) {
@@ -46,7 +48,8 @@ function setupGrid(size) {
 }
 
 function changeColor(e) {
-  e.target.style.backgroundColor = "green";
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16) 
+  e.target.style.backgroundColor = "#" +randomColor;
 }
 
 window.onload = () => {
